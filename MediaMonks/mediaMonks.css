@@ -1,0 +1,278 @@
+@keyframes scale-in-bottom {
+  0% {
+    transform: scale(0) translateY(0px);
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1) translateY(-25px);
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes scale-in-text {
+  0% {
+    font-size: 0px;
+    opacity: 0;
+  }
+  100% {
+    font-size: 20px;
+    opacity: 1;
+  }
+}
+@keyframes upndown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes replace-comma {
+  0% {
+    content: "!";
+  }
+  100% {
+    content: ",";
+  }
+}
+@keyframes slide-text {
+  0% {
+    font-size: 0px;
+  }
+  20% {
+    font-size: 20px;
+  }
+  80% {
+    transform: translateX(-75%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    font-size: 20px;
+  }
+}
+@font-face {
+  font-family: "Klavika Regular";
+  src: url("assets/font/klavika-regular-webfont.woff");
+}
+@font-face {
+  font-family: "Klavika Light";
+  src: url("assets/font/klavika-light-webfont.woff");
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+
+.fadeScreen {
+  opacity: 0;
+  transition-duration: 2s;
+}
+
+.loadingScreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadingScreen-imgContainer {
+  position: relative;
+}
+.loadingScreen-monkImg {
+  background-image: url(assets/images/monk.png);
+  width: 106px;
+  height: 149px;
+  position: absolute;
+  left: calc(50% - 53px);
+  top: calc(50% - 74.5px);
+  animation: scale-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), upndown 1s ease 1s infinite alternate;
+}
+.loadingScreen-smokeImgContainer {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation-delay: 0.3s;
+}
+.loadingScreen-smokeImgContainer img {
+  width: 100%;
+  height: 100%;
+}
+.loadingScreen-textContainer {
+  position: absolute;
+  right: 0px;
+  bottom: 65px;
+  left: 0px;
+  font-family: "Klavika Light";
+  text-align: center;
+  color: white;
+  font-style: italic;
+}
+.loadingScreen-textContainer span:nth-of-type(1) {
+  font-size: 0px;
+  transform: scale(0) translateY(0px);
+  opacity: 0;
+  animation: scale-in-text 0.5s cubic-bezier(0.45, 0.05, 0, 1.74) 0.3s 1 forwards;
+}
+.loadingScreen-textContainer span:nth-of-type(1)::after {
+  content: "!";
+  animation: replace-comma 0.5s linear 1s 1 forwards;
+}
+.loadingScreen-textContainer span:nth-of-type(2) {
+  font-size: 0px;
+  opacity: 0;
+  display: inline-block;
+  position: relative;
+  animation: slide-text 0.4s linear 1s 1 forwards;
+}
+
+.mainScreen-sliderBackground {
+  background-image: url(assets/images/background.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-repeat-x: no-repeat;
+  background-color: black;
+  transition-duration: 1s;
+}
+.mainScreen-title {
+  font-family: "Klavika Regular";
+  font-size: 48px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: underline;
+  position: fixed;
+}
+.mainScreen-title-topLeft {
+  top: 10px;
+  left: 20px;
+}
+.mainScreen-title-middleLeft {
+  top: 435px;
+  left: 55px;
+}
+.mainScreen-title-middleRight {
+  top: 435px;
+  right: 55px;
+}
+.mainScreen-title-topRight {
+  top: 10px;
+  right: 10px;
+}
+.mainScreen-pageButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.mainScreen-pageButton {
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+.mainScreen-subtitle {
+  font-family: "Klavika Light";
+  color: white;
+  font-size: 12px;
+  position: fixed;
+}
+.mainScreen-subtitle-bottomLeft {
+  bottom: 70px;
+  left: 10px;
+}
+.mainScreen-subtitle-bottomRight {
+  bottom: 28px;
+  left: 195px;
+}
+.mainScreen-subtitle-middleRight {
+  text-align: end;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.mainScreen-social {
+  width: 300px;
+}
+.mainScreen-social i {
+  margin: 0px 5px;
+}
+.mainScreen-logo {
+  fill: white;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+.paginator {
+  font-family: "Klavika Regular";
+  display: table;
+  width: 160px;
+  height: 15px;
+  border-collapse: collapse;
+  position: fixed;
+  bottom: 27px;
+  left: 15px;
+}
+.paginator-body {
+  display: table-row-group;
+}
+.paginator-row {
+  display: table-row;
+}
+.paginator-cell {
+  border: 2px dotted white;
+  display: table-cell;
+  text-align: center;
+  color: white;
+  font-size: 9px;
+  width: 7px;
+  position: relative;
+  cursor: pointer;
+}
+.paginator-cell:hover > .paginator-selector {
+  display: block;
+}
+.paginator-selector {
+  background-color: white;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: none;
+}
+.paginator-selector-active {
+  display: block;
+}
+
+/*# sourceMappingURL=mediaMonks.css.map */

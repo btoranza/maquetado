@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquetado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Chicle&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Paleta setentosa: https://coolors.co/001514-fbfffe-6b0504-a3320b-e6af2e */
+    --color-bg: #001514;
+    --color-surface: #fbfffe;
+    --color-ink: #001514;
+    --color-on-bg: #fbfffe;
+    --color-mustard: #e6af2e;
+    --color-rust: #a3320b;
+    --color-burgundy: #6b0504;
+    --font-heading: 'Chicle', cursive;
+    --font-body: 'Quicksand', sans-serif;
+    --font-title: 'Chicle', cursive;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background: var(--color-bg);
+    color: var(--color-on-bg);
+    font: 16px/1.5 var(--font-body);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(14px, 3vh, 36px) clamp(16px, 4vw, 40px) clamp(20px, 4vh, 40px);
+    gap: clamp(8px, 2vh, 18px);
+  }
+
+  header {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 980px;
+    text-align: center;
+  }
+
+  .sunset {
+    width: clamp(120px, 16vh, 200px);
+    aspect-ratio: 400 / 190;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .sunset svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .kicker {
+    display: block;
+    margin: 4px 0 6px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(0.7rem, 1.4vh, 0.8rem);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-mustard);
+  }
+
+  h1 {
+    margin: 0 0 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4.6vh, 3.2rem);
+    letter-spacing: 0.01em;
+    color: var(--color-on-bg);
+  }
+
+  header p {
+    margin: 0;
+    font-size: clamp(0.85rem, 2vh, 1.05rem);
+    color: var(--color-on-bg);
+    opacity: 0.68;
+  }
+
+  .stripe {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 1080px;
+    height: clamp(4px, 0.8vh, 7px);
+    background: linear-gradient(
+      90deg,
+      var(--color-mustard) 0 33.333%,
+      var(--color-rust) 33.333% 66.666%,
+      var(--color-burgundy) 66.666% 100%
+    );
+  }
+
+  main {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(30px, 5vw, 60px);
+    width: 100%;
+    max-width: 1000px;
+    padding: clamp(8px, 1.5vh, 18px) clamp(14px, 2.5vw, 26px);
+  }
+
+  .postcard {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    display: block;
+    background: var(--color-mustard);
+    border: 4px solid var(--color-rust);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transform: rotate(var(--tilt, -1.25deg));
+    transition: border-color 0.15s ease;
+    box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.6);
+  }
+
+  .postcard:nth-child(2) {
+    --tilt: 1.25deg;
+  }
+
+  .postcard:hover,
+  .postcard:focus-visible {
+    border-color: var(--color-mustard);
+  }
+
+  .photo {
+    position: absolute;
+    inset: 0;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .postcard-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 40px 14px 14px;
+    background: linear-gradient(180deg, transparent, var(--color-bg) 82%);
+  }
+
+  .postcard-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .postcard-name {
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2.5vh, 1.5rem);
+    color: var(--color-on-bg);
+  }
+
+  .postcard-desc {
+    margin: 0;
+    font-size: clamp(0.74rem, 1.4vh, 0.86rem);
+    line-height: 1.35;
+    color: var(--color-on-bg);
+    opacity: 0.75;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .stamp {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px dashed var(--color-rust);
+    color: var(--color-rust);
+    transform: rotate(-10deg);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .postcard:hover .stamp {
+    border-color: var(--color-mustard);
+    background: var(--color-mustard);
+    color: var(--color-ink);
+  }
+
+  footer {
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+    color: var(--color-on-bg);
+    font-size: clamp(0.68rem, 1.4vh, 0.8rem);
+    opacity: 0.55;
+  }
+
+  .lang-switcher {
+    position: fixed;
+    top: clamp(10px, 2.5vh, 18px);
+    right: clamp(10px, 2.5vw, 18px);
+    z-index: 5;
+    display: inline-flex;
+    border: 2px solid var(--color-ink);
+    background: var(--color-surface);
+  }
+
+  .lang-option {
+    padding: 5px 9px;
+    border: none;
+    border-right: 2px solid var(--color-ink);
+    background: var(--color-surface);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--color-ink);
+    cursor: pointer;
+  }
+
+  .lang-option:last-child {
+    border-right: none;
+  }
+
+  .lang-option.active {
+    background: var(--color-mustard);
+  }
+</style>
+</head>
+<body>
+  <div class="lang-switcher" role="group" aria-label="Language">
+    <button type="button" class="lang-option" data-lang="en">EN</button>
+    <button type="button" class="lang-option" data-lang="fr">FR</button>
+    <button type="button" class="lang-option" data-lang="es">ES</button>
+  </div>
+
+  <header>
+    <div class="sunset" aria-hidden="true">
+      <svg viewBox="0 0 400 190">
+        <circle cx="200" cy="190" r="190" fill="#e6af2e"/>
+        <circle cx="200" cy="190" r="148" fill="#a3320b"/>
+        <circle cx="200" cy="190" r="106" fill="#6b0504"/>
+        <circle cx="200" cy="190" r="64" fill="#fbfffe"/>
+      </svg>
+    </div>
+    <span class="kicker">Maquetado</span>
+    <h1 data-i18n="title">Dos proyectos, una vitrina</h1>
+    <p data-i18n="subtitle">Mis primeros trabajos de maquetado en HTML/CSS, migrados a un solo repo para tenerlos siempre a mano.</p>
+  </header>
+
+  <div class="stripe"></div>
+
+  <main>
+    <a class="postcard" href="/MediaMonks/mediaMonks.html">
+      <div class="photo">
+        <img src="/preview/mediamonks.jpg" alt="Captura del proyecto MediaMonks" data-i18n-alt="mediamonksAlt" loading="lazy">
+      </div>
+      <div class="postcard-footer">
+        <div class="postcard-text">
+          <span class="postcard-name">MediaMonks</span>
+          <p class="postcard-desc" data-i18n="mediamonksDesc">Landing animada con transiciones y tipografía custom.</p>
+        </div>
+        <span class="stamp" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="postcard" href="/Lenovo/lenovo.html">
+      <div class="photo">
+        <img src="/preview/lenovo.jpg" alt="Captura del proyecto Lenovo" data-i18n-alt="lenovoAlt" loading="lazy">
+      </div>
+      <div class="postcard-footer">
+        <div class="postcard-text">
+          <span class="postcard-name">Lenovo</span>
+          <p class="postcard-desc" data-i18n="lenovoDesc">Catálogo de laptops con filtros y secciones de producto.</p>
+        </div>
+        <span class="stamp" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </a>
+  </main>
+
+  <footer data-i18n="footer">Servido como un único proyecto estático &middot; sin build, HTML/CSS plano.</footer>
+
+  <script>
+    var STORAGE_KEY = 'maquetado-language';
+
+    var translations = {
+      en: {
+        title: 'Two projects, one showcase',
+        subtitle: 'My first HTML/CSS markup jobs, merged into a single repo to keep them always at hand.',
+        mediamonksDesc: 'Animated landing page with transitions and custom typography.',
+        lenovoDesc: 'Laptop catalog with filters and product sections.',
+        mediamonksAlt: 'Screenshot of the MediaMonks project',
+        lenovoAlt: 'Screenshot of the Lenovo project',
+        footer: 'Served as a single static project · no build, plain HTML/CSS.'
+      },
+      fr: {
+        title: 'Deux projets, une vitrine',
+        subtitle: 'Mes premiers travaux de maquettage HTML/CSS, réunis dans un seul dépôt pour les avoir toujours sous la main.',
+        mediamonksDesc: 'Page d’accueil animée avec transitions et typographie personnalisée.',
+        lenovoDesc: 'Catalogue d’ordinateurs portables avec filtres et sections produits.',
+        mediamonksAlt: 'Capture d’écran du projet MediaMonks',
+        lenovoAlt: 'Capture d’écran du projet Lenovo',
+        footer: 'Servi comme un seul projet statique · sans build, HTML/CSS pur.'
+      },
+      es: {
+        title: 'Dos proyectos, una vitrina',
+        subtitle: 'Mis primeros trabajos de maquetado en HTML/CSS, migrados a un solo repo para tenerlos siempre a mano.',
+        mediamonksDesc: 'Landing animada con transiciones y tipografía custom.',
+        lenovoDesc: 'Catálogo de laptops con filtros y secciones de producto.',
+        mediamonksAlt: 'Captura del proyecto MediaMonks',
+        lenovoAlt: 'Captura del proyecto Lenovo',
+        footer: 'Servido como un único proyecto estático · sin build, HTML/CSS plano.'
+      }
+    };
+
+    function isLanguage(value) {
+      return value === 'en' || value === 'fr' || value === 'es';
+    }
+
+    function getInitialLanguage() {
+      try {
+        var stored = localStorage.getItem(STORAGE_KEY);
+        if (isLanguage(stored)) return stored;
+      } catch (e) {
+        // localStorage no disponible (modo privado, storage bloqueado, etc.)
+      }
+      return 'en';
+    }
+
+    function applyLanguage(lang) {
+      var t = translations[lang];
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        el.textContent = t[el.dataset.i18n];
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+        el.alt = t[el.dataset.i18nAlt];
+      });
+      document.querySelectorAll('.lang-option').forEach(function (btn) {
+        var isActive = btn.dataset.lang === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
+      });
+
+      try {
+        localStorage.setItem(STORAGE_KEY, lang);
+      } catch (e) {
+        // la preferencia solo dura la sesión
+      }
+    }
+
+    document.querySelectorAll('.lang-option').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLanguage(btn.dataset.lang);
+      });
+    });
+
+    applyLanguage(getInitialLanguage());
+  </script>
+</body>
+</html>
