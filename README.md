@@ -10,6 +10,10 @@ Two of my first static markup jobs (HTML/CSS), originally built as hiring-proces
 - `MediaMonks/` — animated landing page, HTML/SCSS/TS.
 - `Lenovo/` — laptop catalog page, plain HTML/CSS.
 - `preview/` — screenshots used as thumbnails on the landing page.
+
+| MediaMonks | Lenovo |
+| --- | --- |
+| ![MediaMonks preview](preview/mediamonks.jpg) | ![Lenovo preview](preview/lenovo.jpg) |
 - `favicon.svg` / `favicon.png` / `apple-touch-icon.png` — landing page favicon.
 - `.gitignore` — ignores `.DS_Store`.
 
