@@ -11,6 +11,8 @@ Two of my first static markup jobs (HTML/CSS), originally built as hiring-proces
 - `Lenovo/` — laptop catalog page, plain HTML/CSS.
 - `preview/` — screenshots used as thumbnails on the landing page.
 
+![Landing page preview](preview/landing.jpg)
+
 | MediaMonks | Lenovo |
 | --- | --- |
 | ![MediaMonks preview](preview/mediamonks.jpg) | ![Lenovo preview](preview/lenovo.jpg) |
