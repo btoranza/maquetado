@@ -2,6 +2,8 @@
 
 Two of my first static markup jobs (HTML/CSS), originally built as hiring-process exercises, brought together here into one repo with a shared landing page.
 
+**Live demo:** [maquetado-five.vercel.app](https://maquetado-five.vercel.app/)
+
 ## Structure
 
 - `index.html` — landing page linking to both projects.
