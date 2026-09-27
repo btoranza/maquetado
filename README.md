@@ -1,32 +1,32 @@
 # Maquetado
 
-Dos de mis primeros trabajos de maquetado estático (HTML/CSS), hechos como ejercicios de procesos de selección, reunidos acá en un solo repo con una landing en común.
+Two of my first static markup jobs (HTML/CSS), originally built as hiring-process exercises, brought together here into one repo with a shared landing page.
 
-## Estructura
+## Structure
 
-- `index.html` — landing que enlaza a los dos proyectos.
-- `MediaMonks/` — landing animada, con HTML/SCSS/TS.
-- `Lenovo/` — página de catálogo de laptops, con HTML/CSS plano.
-- `preview/` — capturas usadas como miniaturas en la landing.
-- `.gitignore` — ignora `.DS_Store`.
+- `index.html` — landing page linking to both projects.
+- `MediaMonks/` — animated landing page, HTML/SCSS/TS.
+- `Lenovo/` — laptop catalog page, plain HTML/CSS.
+- `preview/` — screenshots used as thumbnails on the landing page.
+- `.gitignore` — ignores `.DS_Store`.
 
-Ninguno de los dos proyectos tiene build: son HTML/CSS (y JS compilado a mano en el caso de MediaMonks) servidos tal cual.
+Neither project has a build step: it's HTML/CSS (plus hand-compiled JS in MediaMonks's case) served as-is.
 
-## Cómo verlo en local
+## Running it locally
 
-Hay que levantar un servidor estático parado en la raíz del repo — no abrir `index.html` con doble click, porque los links que empiezan con `/` no resuelven con `file://`:
+You need to serve it from the repo root — don't open `index.html` by double-clicking it, since the absolute (`/`-prefixed) links won't resolve over `file://`:
 
 ```
 npx serve
 ```
 
-y entrar a la URL que indique la terminal.
+then open the URL the terminal prints out.
 
 ## Deploy
 
-Pensado para deployarse como un único proyecto (por ejemplo en Vercel), sirviendo la raíz del repo sin ningún build step.
+Meant to be deployed as a single project (e.g. on Vercel), serving the repo root as-is with no build step.
 
-## Notas
+## Notes
 
-- `Lenovo/` está maquetado solo para desktop (≥1200px), sin diseño responsive — así fue el pedido original. Más detalle en [`Lenovo/README.txt`](Lenovo/README.txt).
-- La landing (`index.html`) sí es responsive y tiene selector de idioma (EN/FR/ES).
+- `Lenovo/` is only laid out for desktop (≥1200px), with no responsive design — that was the original brief. More detail in [`Lenovo/README.txt`](Lenovo/README.txt).
+- The landing page (`index.html`) is responsive and has a language switcher (EN/FR/ES).
