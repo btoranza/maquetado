@@ -252,6 +252,26 @@
   .lang-option.active {
     background: var(--color-mustard);
   }
+
+  /* Mobile: stack the cards in a single column and let the page scroll */
+  @media (max-width: 700px) {
+    body {
+      height: auto;
+      min-height: 100dvh;
+      overflow-y: auto;
+    }
+
+    main {
+      flex: 0 0 auto;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .postcard {
+      height: auto;
+      aspect-ratio: 4 / 3;
+    }
+  }
 </style>
 </head>
 <body>
@@ -278,7 +298,7 @@
   <div class="stripe"></div>
 
   <main>
-    <a class="postcard" href="/MediaMonks/mediaMonks.html">
+    <a class="postcard" href="/MediaMonks/mediaMonks.html" target="_blank" rel="noopener">
       <div class="photo">
         <img src="/preview/mediamonks.jpg" alt="Captura del proyecto MediaMonks" data-i18n-alt="mediamonksAlt" loading="lazy">
       </div>
@@ -293,7 +313,7 @@
       </div>
     </a>
 
-    <a class="postcard" href="/Lenovo/lenovo.html">
+    <a class="postcard" href="/Lenovo/lenovo.html" target="_blank" rel="noopener">
       <div class="photo">
         <img src="/preview/lenovo.jpg" alt="Captura del proyecto Lenovo" data-i18n-alt="lenovoAlt" loading="lazy">
       </div>

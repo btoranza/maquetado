@@ -1117,4 +1117,9 @@ img {
         width: 45%;
         margin-right: 0;
     }
+
+    .trusteLogoCont {
+        width: 40px;
+        bottom: -34px;
+    }
 }
