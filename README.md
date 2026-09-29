@@ -37,5 +37,5 @@ Meant to be deployed as a single project (e.g. on Vercel), serving the repo root
 
 ## Notes
 
-- `Lenovo/` is only laid out for desktop (≥1200px), with no responsive design — that was the original brief. More detail in [`Lenovo/README.txt`](Lenovo/README.txt).
+- `Lenovo/` was originally laid out for desktop only (≥1200px); responsive rules for tablet and mobile were added afterwards at the end of `lenovo.css`. More detail in [`Lenovo/README.txt`](Lenovo/README.txt).
 - The landing page (`index.html`) is responsive and has a language switcher (EN/FR/ES).

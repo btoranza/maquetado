@@ -784,3 +784,337 @@ footer{
     width: 100%;
     height: auto;
 }
+/* TABLET / MOBILE */
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+    header {
+        height: auto;
+        padding-bottom: 20px;
+        background-size: cover;
+    }
+
+    .bannerTop,
+    .bannerBrowse,
+    .sort {
+        width: 92%;
+    }
+
+    .bannerTop {
+        height: auto;
+        flex-direction: row;
+        align-items: flex-start;
+        padding-top: 10px;
+    }
+
+    .logoContainer {
+        flex-shrink: 0;
+    }
+
+    .logoContainer img {
+        height: 100px;
+        width: auto;
+        display: block;
+    }
+
+    .navs {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .whiteNav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 8px 0;
+    }
+
+    .navSearch {
+        width: auto;
+        height: auto;
+        padding-right: 10px;
+    }
+
+    .blueNav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .blueNavImages {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .intelText {
+        width: auto;
+    }
+
+    .browseTitle,
+    .sortTitle,
+    .sectionTitle {
+        width: 100%;
+    }
+
+    .browseOptions {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 8px;
+    }
+
+    .browseBox {
+        width: calc(33.333% - 6px);
+        height: 60px;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+    /* Sort by specs */
+    .sortBySpecs {
+        height: auto;
+    }
+
+    .specsNav {
+        flex-wrap: wrap;
+        gap: 6px 16px;
+        padding: 8px 10px;
+        justify-content: center;
+    }
+
+    .moreFeatures {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 16px;
+    }
+
+    .featuresList {
+        width: 100%;
+        text-align: start;
+    }
+
+    .featuresList ul {
+        padding: 0;
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 20px;
+    }
+
+    #forBorder {
+        display: none;
+    }
+
+    .filtersList {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .checkOption {
+        margin-left: 0;
+        margin-right: 20px;
+        width: 140px;
+    }
+
+    .containerWithPadding {
+        padding: 0 20px;
+    }
+
+    /* Our brands */
+    .brandProd {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .thinkPadVideo {
+        width: 100%;
+    }
+
+    .videoImgContainer {
+        margin: 15px 0 10px;
+        max-width: 290px;
+    }
+
+    .viewThinkPad {
+        margin-top: 0;
+    }
+
+    .TPproducts {
+        width: 100%;
+    }
+
+    .thinkPad {
+        width: 100%;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+
+    .TPlogo {
+        width: 40%;
+        flex-shrink: 0;
+    }
+
+    .TPprodContainer {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 16px;
+    }
+
+    .TPprodItem {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .TPprodImgCont {
+        width: 30%;
+        flex-shrink: 0;
+    }
+
+    .filterTPresults {
+        justify-content: flex-start;
+    }
+
+    /* Trending */
+    .trends {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .trendingProductsCont {
+        flex-wrap: wrap;
+        gap: 0 20px;
+    }
+
+    .trendItem {
+        flex: 1 1 calc(50% - 20px);
+        margin-right: 0;
+    }
+
+    /* Footer */
+    footer {
+        height: auto;
+        padding-bottom: 60px;
+    }
+
+    .footerTop {
+        padding: 24px 20px 0;
+    }
+
+    .leftFooterTop {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .register {
+        width: 100%;
+        margin-left: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .regForm {
+        width: 100%;
+    }
+
+    .textBox {
+        width: calc(100% - 100px);
+        box-sizing: border-box;
+        height: 29.5px;
+    }
+
+    .submitReg {
+        right: 0;
+    }
+
+    .socialLogos {
+        padding-top: 10px;
+    }
+
+    .selectTitle,
+    .selectMenu {
+        margin-left: 0;
+    }
+
+    .selectMenu {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 295px;
+    }
+
+    .footerList {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+        padding: 0;
+    }
+
+    .footerList li {
+        margin: 0;
+    }
+
+    .footerEnd {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .endText {
+        margin-left: 0;
+        line-height: 2;
+    }
+
+    .trusteLogoCont {
+        right: 0;
+        bottom: -50px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .browseBox {
+        width: calc(50% - 4px);
+    }
+
+    .browseBox span {
+        font-size: 1.1em;
+    }
+
+    .whiteNav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .whiteNav {
+        align-items: stretch;
+    }
+
+    .navSearch {
+        align-items: flex-end;
+    }
+
+    .recommendW {
+        text-align: end;
+        width: 100%;
+    }
+
+    .searchIcons {
+        justify-content: flex-end;
+    }
+
+    .title h1 {
+        font-size: 1.5em;
+    }
+
+    .title h2 {
+        font-size: 1em;
+    }
+
+    .trendItem {
+        flex: 1 1 100%;
+    }
+
+    .checkOption {
+        width: 45%;
+        margin-right: 0;
+    }
+}

@@ -244,3 +244,112 @@ body {
     }
   }
 }
+
+/* Mobile / tablet */
+@media (max-width: 768px) {
+  .loadingScreen-smokeImgContainer {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  .mainScreen-sliderBackground {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .mainScreen-title,
+  .mainScreen-subtitle {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    text-align: left;
+  }
+
+  .mainScreen-title {
+    font-size: 28px;
+    max-width: calc(100% - 40px);
+  }
+
+  .mainScreen-subtitle {
+    font-size: 11px;
+    bottom: 60px;
+    left: 15px;
+    right: 100px;
+  }
+
+  .mainScreen-pageButton {
+    font-size: 28px;
+    padding: 12px;
+  }
+
+  /* Each page moves its title to a different edge of the screen; the subtitle stays put */
+  [data-page="0"] .mainScreen-title {
+    top: 24px;
+    left: 20px;
+  }
+
+  [data-page="1"] .mainScreen-title {
+    bottom: 110px;
+    right: 20px;
+    text-align: right;
+  }
+
+  [data-page="2"] .mainScreen-title {
+    top: 24px;
+    right: 20px;
+    text-align: right;
+  }
+
+  [data-page="3"] .mainScreen-title {
+    top: 26%;
+    left: 20px;
+  }
+
+  [data-page="4"] .mainScreen-title {
+    bottom: 110px;
+    left: 20px;
+  }
+
+  [data-page="5"] .mainScreen-title {
+    top: 22%;
+    right: 20px;
+    text-align: right;
+  }
+
+  [data-page="6"] .mainScreen-title {
+    top: 24px;
+    left: 20px;
+  }
+
+  [data-page="7"] .mainScreen-title {
+    bottom: 110px;
+    right: 20px;
+    text-align: right;
+  }
+
+  [data-page="8"] .mainScreen-title {
+    top: 26%;
+    left: 20px;
+  }
+
+  [data-page="9"] .mainScreen-title {
+    top: 24px;
+    right: 20px;
+    text-align: right;
+  }
+
+  .paginator {
+    left: 10px;
+    bottom: 20px;
+    width: calc(100% - 130px);
+    max-width: 220px;
+  }
+
+  .mainScreen-logo {
+    width: 90px;
+    height: auto;
+  }
+}

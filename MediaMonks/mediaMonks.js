@@ -49,6 +49,7 @@ const handlePagination = (page) => {
 };
 const renderPageData = (data) => {
     backgroundImage.style.backgroundPositionX = `${data.backgroundPosition}%`;
+    backgroundImage.dataset.page = String(data.id);
     title.innerHTML = data.title;
     title.classList.remove(getLastClass(title));
     title.classList.add(`mainScreen-title-${data.titleClass}`);
